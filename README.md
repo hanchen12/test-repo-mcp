@@ -33,10 +33,17 @@ python3 test_main.py
 test-repo-mcp/
 ├── main.py          # 主程序
 ├── test_main.py     # 单元测试
+├── calculator.py    # 计算器模块（feature 分支）
+├── test_calculator.py  # 计算器测试
 ├── config.json      # 配置文件
 ├── .gitignore       # Git 忽略文件
 └── README.md        # 项目说明
 ```
+
+## 分支说明
+
+- `main`: 主分支，包含基础功能
+- `feature/add-calculator`: 功能分支，添加计算器模块
 
 ## 创建信息
 

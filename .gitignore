@@ -1,25 +1,23 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-ENV/
-.venv
+# C++ 编译文件
+*.o
+*.out
+*.exe
+main
+test_calculator
+build/
+bin/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.sublime-*
 
-# 测试
-.pytest_cache/
-.coverage
-htmlcov/
+# 编译数据库
+compile_commands.json
 
 # 其他
 .DS_Store
 *.log
+*.dSYM/

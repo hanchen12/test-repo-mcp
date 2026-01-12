@@ -12,8 +12,9 @@
     "GitHub MCP 集成测试"
   ],
   "settings": {
-    "language": "Python",
-    "python_version": "3.8+",
+    "language": "C++",
+    "cpp_standard": "C++11",
+    "compiler": "g++",
     "auto_test": true
   }
 }

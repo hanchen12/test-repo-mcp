@@ -1,0 +1,19 @@
+{
+  "project": {
+    "name": "GitHub MCP Test Project",
+    "version": "1.0.0",
+    "description": "用于测试 GitHub MCP 功能的示例项目",
+    "author": "hanchen12",
+    "created": "2026-01-12"
+  },
+  "features": [
+    "Git 操作测试",
+    "分支管理测试",
+    "GitHub MCP 集成测试"
+  ],
+  "settings": {
+    "language": "Python",
+    "python_version": "3.8+",
+    "auto_test": true
+  }
+}

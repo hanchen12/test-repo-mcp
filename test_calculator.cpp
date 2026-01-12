@@ -6,8 +6,20 @@
 // 简单的断言宏（用于测试）
 #define ASSERT_EQUAL(a, b) \
     do { \
-        if (std::abs((a) - (b)) > 1e-9) { \
-            std::cerr << "测试失败: " << #a << " != " << #b << " (" << (a) << " != " << (b) << ")" << std::endl; \
+        auto val_a = (a); \
+        auto val_b = (b); \
+        if (std::abs(static_cast<double>(val_a) - static_cast<double>(val_b)) > 1e-9) { \
+            std::cerr << "测试失败: " << #a << " != " << #b << " (" << val_a << " != " << val_b << ")" << std::endl; \
+            return false; \
+        } \
+    } while(0)
+
+#define ASSERT_EQUAL_TOL(a, b, tol) \
+    do { \
+        auto val_a = static_cast<double>(a); \
+        auto val_b = static_cast<double>(b); \
+        if (std::abs(val_a - val_b) > (tol)) { \
+            std::cerr << "测试失败: " << #a << " != " << #b << " (" << val_a << " != " << val_b << ")" << std::endl; \
             return false; \
         } \
     } while(0)
@@ -51,7 +63,7 @@ bool testDivide() {
     Calculator calc;
     ASSERT_EQUAL(calc.divide(10, 2), 5);
     ASSERT_EQUAL(calc.divide(9, 3), 3);
-    ASSERT_EQUAL(calc.divide(1, 3), 0.333333333, 1e-6);
+    ASSERT_EQUAL_TOL(calc.divide(1, 3), 0.333333333, 1e-6);
     std::cout << "✓ 除法测试通过" << std::endl;
     return true;
 }
